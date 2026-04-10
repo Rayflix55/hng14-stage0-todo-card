@@ -3,7 +3,7 @@
 A high-fidelity, accessible, and responsive Todo Item Card built for the **HNG 14 Internship (Frontend Track)**. This project demonstrates the ability to build complex, polished UI components using pure Vanilla technologies.
 
 ## 🚀 Live Demo
-[**View the Live Project Here**](INSERT_YOUR_LIVE_LINK_HERE)
+[**View the Live Project Here**](https://hng14-stage0-todo-card.vercel.app/)
 
 ---
 
@@ -46,4 +46,4 @@ The project includes exact matches for all required test identifiers:
 
 2. Open index.html in any modern web browser.
 
-Developed by Akpe Raymond Samuel (Rayflix) Frontend Developer & Technical Writer GitHub | LinkedIn
+Developed by Akpe Raymond Samuel (Rayflix) Frontend Developer & Technical Writer 
