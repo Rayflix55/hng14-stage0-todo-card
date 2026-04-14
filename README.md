@@ -3,7 +3,7 @@
 A high-fidelity, state-driven Task Manager built for the **HNG 14 Internship (Frontend Track)**. This project evolves the initial Todo concept into a functional micro-app featuring real-time state synchronization, dynamic priority theming, and a dual-mode "View/Edit" interface.
 
 ## 🚀 Live Demo
-[**View the Live Project Here**](INSERT_YOUR_LIVE_LINK_HERE)
+[**View the Live Project Here**](https://hng14-stage0-todo-card.vercel.app/)
 
 ---
 
@@ -34,4 +34,10 @@ Fully instrumented with 13 mandatory `data-testid` attributes:
 
 ---
 
+<<<<<<< HEAD
 **Developed by Akpe Raymond Samuel (Rayflix)** *Frontend Engineer & Technical Writer* [GitHub](https://github.com/rayflix55) | [LinkedIn](https://www.linkedin.com/in/akpe-samuel-993971329) | [X (Twitter)](https://x.com/web3rayflix)
+=======
+2. Open index.html in any modern web browser.
+
+Developed by Akpe Raymond Samuel (Rayflix) Frontend Developer & Technical Writer 
+>>>>>>> f36632c22c64bb4fcf92139c5ebaac5d6840911e
