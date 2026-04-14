@@ -205,3 +205,121 @@ body {
 .done-state {
   opacity: 0.8;
 }
+
+#priority-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  border-radius: 32px 0 0 32px;
+  transition: background 0.3s;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#collapsible-section {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+#collapsible-section.collapsed {
+  max-height: 3em;
+}
+
+#edit-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+input,
+textarea,
+select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-bottom: 20px;
+}
+
+.countdown-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#urgency-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff3b30;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3b30;
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
+
+#countdown.urgent-text {
+  color: #ff3b30 !important;
+  font-weight: 900;
+}
+
+.pill {
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.bg-high {
+  background: #ff3b30 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+.bg-medium {
+  background: #ff9500 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+}
+
+.bg-low {
+  background: #34c759 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+}

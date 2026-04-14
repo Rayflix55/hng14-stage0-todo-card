@@ -3,83 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HNG Stage 0 - Todo Card</title>
+    <title>HNG Stage 1A - Advanced Todo Card</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <article data-testid="test-todo-card" id="main-card">
-      <div class="top-row">
-        <div class="badges-group">
-          <span class="pill" data-testid="test-todo-tag-design">Design</span>
-          <span class="pill" data-testid="test-todo-priority"
-            >High Priority</span
+      <div
+        id="priority-border"
+        data-testid="test-todo-priority-indicator"
+      ></div>
+
+      <div id="view-mode">
+        <div class="top-row">
+          <div class="badges-group">
+            <span class="pill" data-testid="test-todo-tag-design">Design</span>
+            <span
+              class="pill"
+              data-testid="test-todo-priority"
+              id="priority-pill"
+              >High Priority</span
+            >
+          </div>
+          <div class="checkbox-container">
+            <input
+              type="checkbox"
+              id="check"
+              data-testid="test-todo-complete-toggle"
+            />
+            <label for="check" style="display: none">Complete</label>
+          </div>
+        </div>
+
+        <h2 data-testid="test-todo-title" id="display-title">
+          Launch Social Media Campaign
+        </h2>
+
+        <div
+          id="collapsible-section"
+          data-testid="test-todo-collapsible-section"
+          class="collapsed"
+        >
+          <p data-testid="test-todo-description" id="display-description">
+            Prepare visuals and copy for the "30 Days of Productivity" campaign
+            across Instagram, LinkedIn, and X.
+          </p>
+        </div>
+        <button
+          id="expand-btn"
+          data-testid="test-todo-expand-toggle"
+          class="text-link"
+        >
+          Read More
+        </button>
+
+        <div class="meta-container" id="meta-box">
+          <div class="time-labels">
+            <time data-testid="test-todo-due-date" id="display-due-date"
+              >Due: --</time
+            >
+            <div class="countdown-group">
+              <span
+                data-testid="test-todo-time-remaining"
+                id="countdown"
+                aria-live="polite"
+                >Calculating...</span
+              >
+              <span
+                id="urgency-dot"
+                data-testid="test-todo-overdue-indicator"
+                class="hidden"
+                >⚠️</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <select data-testid="test-todo-status-control" id="status-dropdown">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+          <span class="tag-item" data-testid="test-todo-status" id="status-chip"
+            >IN PROGRESS</span
           >
         </div>
-        <div class="checkbox-container">
+
+        <div class="action-grid">
+          <button
+            class="btn-liquid primary-btn"
+            data-testid="test-todo-edit-button"
+            id="edit-btn"
+          >
+            Edit
+          </button>
+          <button
+            class="btn-liquid danger-btn"
+            data-testid="test-todo-delete-button"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+
+      <form id="edit-mode" data-testid="test-todo-edit-form" class="hidden">
+        <h3>Edit Task</h3>
+        <div class="form-group">
+          <label for="edit-title">Title</label>
           <input
-            type="checkbox"
-            id="check"
-            data-testid="test-todo-complete-toggle"
+            type="text"
+            id="edit-title"
+            data-testid="test-todo-edit-title-input"
+            placeholder="Task Title"
           />
-          <label for="check" style="display: none">Complete</label>
         </div>
-      </div>
-
-      <h2 data-testid="test-todo-title" id="todo-title">
-        Launch Social Media Campaign
-      </h2>
-      <p data-testid="test-todo-description">
-        Prepare visuals and copy for the "30 Days of Productivity" campaign
-        across Instagram, LinkedIn, and X.
-      </p>
-
-      <div class="meta-container">
-        <svg class="clock-icon" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        <div class="time-labels">
-          <time data-testid="test-todo-due-date" datetime="2026-04-16T18:00"
-            >Due at 12:00 AM, 16 Apr 2026</time
-          >
-          <span
-            data-testid="test-todo-time-remaining"
-            id="countdown"
-            aria-live="polite"
-            >Calculating...</span
-          >
+        <div class="form-group">
+          <label for="edit-desc">Description</label>
+          <textarea
+            id="edit-desc"
+            data-testid="test-todo-edit-description-input"
+            placeholder="Task Description"
+          ></textarea>
         </div>
-      </div>
-
-      <ul data-testid="test-todo-tags" role="list">
-        <li class="tag-item" data-testid="test-todo-tag-work">WORK</li>
-        <li class="tag-item" data-testid="test-todo-tag-urgent">URGENT</li>
-        <li
-          class="tag-item"
-          data-testid="test-todo-status"
-          id="status-chip"
-          style="color: var(--primary)"
-        >
-          IN PROGRESS
-        </li>
-      </ul>
-
-      <div class="action-grid">
-        <button
-          class="btn-liquid"
-          data-testid="test-todo-edit-button"
-          onclick="console.log('edit clicked')"
-        >
-          Edit
-        </button>
-        <button
-          class="btn-liquid"
-          data-testid="test-todo-delete-button"
-          onclick="alert('Delete clicked')"
-        >
-          Delete
-        </button>
-      </div>
+        <div class="form-row" style="display: flex; gap: 10px">
+          <div class="form-group" style="flex: 1">
+            <label for="edit-priority">Priority</label>
+            <select
+              id="edit-priority"
+              data-testid="test-todo-edit-priority-select"
+            >
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 1">
+            <label for="edit-date">Due Date</label>
+            <input
+              type="datetime-local"
+              id="edit-date"
+              data-testid="test-todo-edit-due-date-input"
+            />
+          </div>
+        </div>
+        <div class="action-grid" style="margin-top: 20px">
+          <button
+            type="button"
+            class="btn-liquid primary-btn"
+            id="save-btn"
+            data-testid="test-todo-save-button"
+          >
+            Save Changes
+          </button>
+          <button
+            type="button"
+            class="btn-liquid"
+            id="cancel-btn"
+            data-testid="test-todo-cancel-button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
     </article>
 
     <script src="script.js"></script>
